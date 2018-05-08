@@ -1,5 +1,7 @@
 //main init
-const cardList = ["fa fa-gem", "fa fa-gem", "fa fa-paper-plane", "fa fa-paper-plane", "fa fa-anchor", "fa fa-anchor", "fa fa-bolt", "fa fa-bolt", "fa fa-cube", "fa fa-cube", "fa fa-leaf", "fa fa-leaf", "fa fa-bicycle", "fa fa-bicycle", "fa fa-bomb", "fa fa-bomb"];
+//const cardList = ["fa fa-gem", "fa fa-gem", "fa fa-paper-plane", "fa fa-paper-plane", "fa fa-anchor", "fa fa-anchor", "fa fa-bolt", "fa fa-bolt", "fa fa-cube", "fa fa-cube", "fa fa-leaf", "fa fa-leaf", "fa fa-bicycle", "fa fa-bicycle", "fa fa-bomb", "fa fa-bomb"];
+const card = ["fa fa-gem", "fa fa-paper-plane", "fa fa-anchor", "fa fa-bolt", "fa fa-cube", "fa fa-leaf", "fa fa-bicycle", "fa fa-bomb"];
+const cardList = [...card, ...card];
 const cardItem = document.querySelector('.deck').children;
 const startBtn = document.querySelector('#start');
 const endBtn = document.querySelector('#end');
@@ -53,7 +55,8 @@ function resetTable() {
 
 //comparing clicked cards
 function compareCards() {
-	return (clickedCards[0] === clickedCards[1]) ? true : false;
+	return clickedCards[0] === clickedCards[1];
+	//return (clickedCards[0] === clickedCards[1]) ? true : false;
 }
 
 //endgame modal print score and time
@@ -69,14 +72,15 @@ function endGame() {
 
 //add cards event listener + move counter + score indicator
 function cardClick(e) {
-	if (e.target.classList.value === 'card open show') {
-		e.target.classList.value = 'card';
-		clickedCards = [];
-	} else if (e.target.classList.value === 'card') {
+	if (e.target.classList.value === 'card') {
 		e.target.classList.value = 'card open show';
 		clickedCards.push(e.target.children[0].classList.value);
 		
 		if (clickedCards.length === 2) {
+			//move counter update
+			movesCount++;
+			moves.innerHTML = movesCount;
+
 			if (compareCards()) {
 				//matched cards
 				for (let i = 0; i < cardItem.length; i++) {
@@ -105,16 +109,12 @@ function cardClick(e) {
 			}
 		}
 	}
-
-	//move counter update
-	movesCount++;
-	moves.innerHTML = movesCount;
-
+	
 	//score update
-	if (26 < movesCount && movesCount <= 36) {
+	if (13 < movesCount && movesCount <= 18) {
 		score[2].children[0].classList.value = 'far fa-star';
 		stars = 2;
-	} else if (movesCount > 36) {
+	} else if (movesCount > 19) {
 		score[1].children[0].classList.value = 'far fa-star';
 		stars = 1;
 	}

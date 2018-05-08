@@ -146,3 +146,61 @@ button {
     font-size: 25px;
     color: #EA2027;
 }
+
+@media screen and (min-width: 480px) and (max-width: 680px){
+    .deck {
+        width: 500px;
+        min-height: 500px;
+        padding: 23px;
+    }
+
+    .deck .card {
+        height: 100px;
+        width: 100px;
+    }
+    
+    button {
+        width: 220px;
+        height: 80px;
+        font-size: 27px;
+        top: 333px;
+    }
+    
+    #end {
+    top: 267px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .deck {
+        width: 350px;
+        min-height: 350px;
+        padding: 10px;
+    }
+
+    .deck .card {
+        height: 70px;
+        width: 70px;
+    }
+
+    button {
+        width: 170px;
+        height: 70px;
+        font-size: 22px;
+        top: 250px;
+    }
+    
+    #end {
+    width: 220px;
+    height: 150px;
+    top: 214px;
+    font-size: 14px;
+    }
+
+    #end span {
+    font-size: 19px;
+    }
+}
+
+
+

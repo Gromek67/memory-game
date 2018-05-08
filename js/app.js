@@ -1,5 +1,4 @@
 //main init
-//const cardList = ["fa fa-gem", "fa fa-gem", "fa fa-paper-plane", "fa fa-paper-plane", "fa fa-anchor", "fa fa-anchor", "fa fa-bolt", "fa fa-bolt", "fa fa-cube", "fa fa-cube", "fa fa-leaf", "fa fa-leaf", "fa fa-bicycle", "fa fa-bicycle", "fa fa-bomb", "fa fa-bomb"];
 const card = ["fa fa-gem", "fa fa-paper-plane", "fa fa-anchor", "fa fa-bolt", "fa fa-cube", "fa fa-leaf", "fa fa-bicycle", "fa fa-bomb"];
 const cardList = [...card, ...card];
 const cardItem = document.querySelector('.deck').children;
@@ -56,7 +55,6 @@ function resetTable() {
 //comparing clicked cards
 function compareCards() {
 	return clickedCards[0] === clickedCards[1];
-	//return (clickedCards[0] === clickedCards[1]) ? true : false;
 }
 
 //endgame modal print score and time

@@ -13,9 +13,24 @@ This game is the 3rd project of the Google Developer Scholarship Front End Devel
 It was given some starter code:
 - an HTML file,
 - a CSS file with styling,
-- a JS file with a given shuffle function
+- a JS file with a given shuffle function (http://stackoverflow.com/a/2450976)
 
-The 
+The goal was to made an interactive memory game.
+
+### Used technologies
+- HTML5
+- CSS3
+- core Javascript
+- Font Awesome icons
+- Google Fonts
+
+### Game behavior
+- The game randomly shuffles the cards. A user wins once all cards have successfully been matched.
+- When a user wins the game, a modal appears to congratulate the player and ask if they want to play again. It also tell the user how much time it took to win the game, and what the star rating was.
+- The restart button allows the player to reset the game board, the timer, and the star rating.
+- The game displays a star rating (from 1 to 3) that reflects the player's performance.
+- When the player starts a game, a displayed timer also start.
+- Game displays the current number of moves a user has made.
 
 
 The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
